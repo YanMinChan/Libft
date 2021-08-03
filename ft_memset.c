@@ -15,10 +15,11 @@ void	*ft_memset(void *b, int c, size_t len)
 /*#include <stdio.h>
 #include <string.h>
 
+// will not work if len bytes exceed *b (overflow buffer)
 int	main(void)
 {
-	char str[] = "Hello welcome to core programme.";
+	char str[] = "Welcome to Hogwarts!";
 
-	printf("ori:%s\n", memset(str, '.', 3*sizeof(char)));
-	printf("func:%s\n", ft_memset(str, '.', 3*sizeof(char)));
+	printf("ori:%s\n", memset(str, '.', 8*sizeof(char)));
+	printf("func:%s\n", ft_memset(str, '.', 8*sizeof(char)));
 }*/

@@ -5,15 +5,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (*s++)
+	while (s[len])
 		len++;
 	return (len);
 }
-
-/*#include <string.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("ori:%lu func:%lu\n", strlen("Hello"), ft_strlen("Hello"));
-}*/

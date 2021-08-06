@@ -8,7 +8,7 @@ static int	ft_trimstart(char const *s1, char const *set)
 	while (s1[i])
 	{
 		if (s1[i] == set)
-			break;
+			break ;
 		i++;
 	}
 	return (i);
@@ -22,12 +22,11 @@ static int	ft_trimend(char const *s1, char const *set)
 	while (s1[j])
 	{
 		if (s1[j] == set)
-			break;
+			break ;
 		j--;
 	}
 	return (j);
 }
-
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

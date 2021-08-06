@@ -1,12 +1,12 @@
 //#include "libft.h"
 #include <stdlib.h>
 
-static size_t	ft_wrdlen(const char *s, char c)
+static size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
 	len = 0;
-	while (s[len] && s[len] != c)
+	while (s[len])
 		len++;
 	return (len);
 }
@@ -21,9 +21,10 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	if (!s)
 		return (0);
-	
+	arr = (char **)malloc(sizeof(**arr) * (ft_strlen(s) + 1));
 	while (*s)
 	{
+		arr[i] = (char *)malloc(sizeof(*arr) * (ft_strlen(s) + 1));
 		if (*s == c)
 		{
 			i++;

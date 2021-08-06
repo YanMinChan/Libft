@@ -27,10 +27,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 int	main(void)
 {
-	char	dst[30] = "Core ";
-	char	src[] = "Programme";
+	char	dst[30] = "";
+	char	src[] = "";
 	size_t	n = 4;
 
-	printf("%zu\n", ft_strlcat(dst, src, n));
+	printf("%zu\n", strlcat(dst, src, n));
 	printf("%s\n", dst);
 }*/

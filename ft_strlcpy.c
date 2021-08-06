@@ -21,10 +21,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 int	main(void)
 {
-	char	src[] = "I have an apple";
+	char	src[] = "";
 	char	dest[20];
-	unsigned int	size = 6;
+	unsigned int	size = 10;
 
-	printf("%zu\n", ft_strlcpy(dest, src, size));
+	printf("%zu\n", strlcpy(dest, src, size));
 	printf("%s\n", dest);
 }*/

@@ -7,7 +7,7 @@ static int	ft_trimstart(char const *s1, char const *set)
 	i = 0;
 	while (s1[i])
 	{
-		if (s1[i] == set)
+		if (s1[i] == *set)
 			break ;
 		i++;
 	}
@@ -21,7 +21,7 @@ static int	ft_trimend(char const *s1, char const *set)
 	j = (int)ft_strlen(s1) - 1;
 	while (s1[j])
 	{
-		if (s1[j] == set)
+		if (s1[j] == *set)
 			break ;
 		j--;
 	}

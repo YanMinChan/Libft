@@ -9,7 +9,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	p1 = dst;
 	p2 = src;
-	if (!dst && *src)
+	if (!dst && !src)
 		return (0);
 	while (i < len)
 	{

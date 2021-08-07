@@ -5,8 +5,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*sub;
 
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
 	i = 0;
-	sub = (char *)malloc(sizeof(*sub) * (len + 1));
+	sub = (char *)malloc(sizeof(sub) * (len + 1));
 	if (!sub)
 		return (0);
 	while (s[start + i] && i < len)
@@ -22,8 +24,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 int	main(void)
 {
-	char const	s[] = "What am I doing";
+	char const	s[] = "01234";
 
-	printf("%s %p\n", ft_substr(s, 5, 100), ft_substr(s, 5, 100));
+	printf("%s %p\n", ft_substr(s, 10, 10), ft_substr(s, 10, 10));
 	printf("%p\n", s);
 }*/

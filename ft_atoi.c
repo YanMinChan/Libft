@@ -2,7 +2,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int	ret;
+	unsigned long long	ret;
 	int	sign;
 
 	ret = 0;
@@ -29,7 +29,7 @@ int	ft_atoi(const char *str)
 
 int	main(void)
 {
-	const char str[] = " 	 		-12345basdfhnsd1293874";
+	const char str[] = " 	 		99999999999999999999999999basdfhnsd1293874";
 	
 	printf("ori:%d\n", atoi(str));
 	printf("func:%d\n", ft_atoi(str));

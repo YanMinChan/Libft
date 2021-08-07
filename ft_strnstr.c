@@ -1,6 +1,7 @@
-#include "libft.h"
+//#include "libft.h"
+#include <stdlib.h>
 
-/*static size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
@@ -8,18 +9,20 @@
 	while (str[i])
 		i++;
 	return (i);
-}*/
+}
 
-static int	compare(const char *haystack, const char *needle)
+static int	compare(const char *haystack, const char *needle, size_t n)
 {
-	int	j;
-	int	len;
+	size_t	j;
+	size_t	len;
 
 	j = 0;
 	len = ft_strlen(needle);
 	while (j < len)
 	{
 		if (haystack[j] != needle[j])
+			return (0);
+		if (j > n)
 			return (0);
 		j++;
 	}
@@ -38,7 +41,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (*(haystack + i) && i < len)
 	{
 		if (*(haystack + i) == *needle)
-			word_find = compare(haystack + i, needle);
+			word_find = compare(haystack + i, needle, len - i);
 		if (word_find)
 			return ((char *)(haystack + i));
 		i++;
@@ -51,10 +54,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 int	main(void)
 {
-	const char	haystack[] = "Wish you good luck!";
-	const char	needle[] = "";
-	size_t	n = 5;
+	const char	haystack[] = "MZIRIBMZIRIBMZE123";
+	const char	needle[] = "MZIRIBMZE";
+	size_t	n = 9;
 
-	printf("%s\n", ft_strnstr(haystack, needle, n));
-	printf("%s\n", strnstr(haystack, needle, n));
+	printf("func:%s\n", ft_strnstr(haystack, needle, n));
+	printf("ori:%s\n", strnstr(haystack, needle, n));
 }*/

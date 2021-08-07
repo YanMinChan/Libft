@@ -9,6 +9,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	p1 = dst;
 	p2 = src;
+	if (!dst && !src)
+		return (0);
 	while (i < n)
 	{
 		p1[i] = (char)p2[i];
@@ -22,9 +24,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 int	main(void)
 {
-	char dst[] = "Harry Potter and the Goblet of Fire";
-	char src[] = "Henry Pottah end tha Gabble of Fiya";
-	size_t	n = 7;
+	char *dst = 0;
+	char *src = "HELLO";
+	size_t	n = 10;
 
 	printf("ori dst:%s\n", dst);
 	printf("ori:%s\n", memcpy(dst, src, n));

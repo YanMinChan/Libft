@@ -9,7 +9,7 @@
 static int	ft_wrdnbr(char const *s, char c)
 {
 	int	wrdnbr;
-	
+
 	if (!s)
 		return (0);
 	wrdnbr = 0;
@@ -45,8 +45,8 @@ static int	ft_wrdlen(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char **arr;
-	int	i;
+	char	**arr;
+	int		i;
 
 	arr = (char **)malloc(sizeof(*arr) * (ft_wrdnbr(s, c) + 1));
 	if (!arr)

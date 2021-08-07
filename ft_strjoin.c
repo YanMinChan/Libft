@@ -6,7 +6,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*newstr;
 
 	tlen = (int)(ft_strlen(s1) + ft_strlen(s2));
-	newstr = (char *)malloc(sizeof(*newstr) * (tlen + 1));
+	newstr = (char *)malloc(sizeof(newstr) * (tlen + 1));
 	if (!newstr)
 		return (0);
 	ft_strlcpy(newstr, s1, ft_strlen(s1) + 1);

@@ -54,7 +54,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (*s)
 	{
-		if (*s == c)
+		while (*s == c)
 			s++;
 		if (*s != c)
 		{
@@ -74,28 +74,11 @@ char	**ft_split(char const *s, char c)
 
 int	main(void)
 {
-	const char *s = "      Hello      its me leh eh      ";
-	char	c = ' ';
-
-	while (*s)
-	{
-	   if (*s == c)
-		   s++;
-	   if (*s != c)
-	   {
-		   printf("%d\n", ft_wrdlen(s, c));
-		   s += ft_wrdlen(s, c);
-	   }
-	}
-}
-
-int	main(void)
-{
-	const char *s = "Hello its me";
+	const char *s = "split  this for me !";
 	char	c = ' ';
 	char	**arr;
 
 	arr = ft_split(s, c);
-	for(int i = 0; i < ft_wrdnbr(s, c); i++)
+	for(int i = 0; i < 6; i++)
 		printf("%s    ", arr[i]);
 }*/

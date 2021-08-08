@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -81,4 +81,4 @@ int	main(void)
 	arr = ft_split(s, c);
 	for(int i = 0; i < 6; i++)
 		printf("|%s|", arr[i]);
-}
+}*/

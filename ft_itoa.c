@@ -13,7 +13,7 @@ static int	ft_mem(long int n)
 	int	mem;
 
 	mem = 0;
-	if (n < 0)
+	if (n <= 0)
 		mem++;
 	while (n != 0)
 	{
@@ -30,7 +30,8 @@ char	*ft_itoa(int n)
 	char	*c;
 
 	mem = ft_mem(n);
-	c = (char *)malloc(sizeof(c) * (mem + 1));
+	is_negative = 0;
+	c = (char *)malloc(sizeof(c) * mem + 1);
 	if (!c)
 		return (0);
 	if (n < 0)
@@ -50,5 +51,7 @@ char	*ft_itoa(int n)
 
 int	main(void)
 {
-	printf("%s", ft_itoa(21474830));
+	printf("%s\n", ft_itoa(-623));
+	printf("%s\n", ft_itoa(156));
+	printf("%s\n", ft_itoa(-0));
 }*/

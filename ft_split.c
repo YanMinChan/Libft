@@ -48,7 +48,7 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 	int		i;
 
-	arr = (char **)malloc(sizeof(*arr) * (ft_wrdnbr(s, c) + 1));
+	arr = (char **)malloc(sizeof(*arr) * ft_wrdnbr(s, c) + 1);
 	if (!arr)
 		return (0);
 	i = 0;
@@ -59,9 +59,9 @@ char	**ft_split(char const *s, char c)
 		if (*s != c)
 		{
 			arr[i] = (char *)malloc(sizeof(arr) * (ft_wrdlen(s, c) + 1));
-			if (!arr[i])
+			if (!arr[i] || ft_wrdlen(s, c) == 0)
 				break ;
-			ft_strlcpy(arr[i], s, ft_wrdlen(s, c) + 1);
+			ft_strlcpy(arr[i], s, ft_wrdlen(s, c));
 			s += ft_wrdlen(s, c);
 			i++;
 		}
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -80,5 +80,5 @@ int	main(void)
 
 	arr = ft_split(s, c);
 	for(int i = 0; i < 6; i++)
-		printf("%s    ", arr[i]);
-}*/
+		printf("|%s|", arr[i]);
+}

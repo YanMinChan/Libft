@@ -18,10 +18,10 @@ static int	ft_trimend(char const *s1, char const *set)
 {
 	int	j;
 
-	j = (int)ft_strlen(s1) - 1;
-	while (s1[j])
+	j = (int)ft_strlen(s1);
+	while (s1[j - 1])
 	{
-		if (!ft_strchr(set, s1[j]))
+		if (!ft_strchr(set, s1[j - 1]))
 			break ;
 		j--;
 	}

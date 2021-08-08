@@ -61,7 +61,7 @@ char	**ft_split(char const *s, char c)
 			arr[i] = (char *)malloc(sizeof(arr) * (ft_wrdlen(s, c) + 1));
 			if (!arr[i] || ft_wrdlen(s, c) == 0)
 				break ;
-			ft_strlcpy(arr[i], s, ft_wrdlen(s, c));
+			ft_strlcpy(arr[i], s, ft_wrdlen(s, c) + 1);
 			s += ft_wrdlen(s, c);
 			i++;
 		}

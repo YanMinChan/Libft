@@ -9,7 +9,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	sub = (char *)malloc(sizeof(sub) * (len + 1));
+	sub = (char *)malloc(sizeof(sub) * len + 1);
 	if (!sub)
 		return (0);
 	i = 0;
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 int	main(void)
 {
-	char const	s[] = "01234";
+	char const	s[] = "\0";
 
 	printf("%s %p\n", ft_substr(s, 10, 10), ft_substr(s, 10, 10));
 	printf("%p\n", s);

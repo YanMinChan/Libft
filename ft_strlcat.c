@@ -11,27 +11,31 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	i = dst_len;
+	if (*src == 0)
+		return (src_len + dst_len);
 	if (dstsize < dst_len + 1)
 		return (src_len + dstsize);
 	if (dstsize > dst_len + 1)
 	{
-		while (i < dstsize - 1i || src[j])
+		while ((dst_len + j) < dstsize && src[j])
 			dst[i++] = src[j++];
+		if ((dst_len + j) == dstsize)
+			dst[--i] = '\0';
+		else
+			dst[i] = '\0';
 	}
-	dst[i] = '\0';
 	return (src_len + dst_len);
 }
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	char	dst[16];
-	char	src[] = "lorem ipsum";
+	char	dst[16] = "HELLO";
+	char	src[] = "";
 	size_t	n = 15;
 
-	ft_memset(dst, 0, 15);
 	printf("%zu\n", strlcat(dst, src, n));
 	printf("%s\n", dst);
-}
+}*/

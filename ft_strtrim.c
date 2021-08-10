@@ -42,9 +42,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_trimend(s1, set);
 	if (start >= end)
 		return (ft_strdup(""));
-	trim = (char *)malloc(sizeof(trim) * (end - start + 1));
+	trim = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!trim)
-		return (0);
+		return (trim = 0);
 	ft_strlcpy(trim, s1 + start, end - start + 1);
 	return (trim);
 }

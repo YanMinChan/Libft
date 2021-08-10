@@ -41,7 +41,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (*(haystack + i) && i < len)
 	{
 		if (*(haystack + i) == *needle)
-			word_find = compare(haystack + i, needle, len - i);
+			word_find = compare(haystack + i, needle, len - i - 1);
 		if (word_find)
 			return ((char *)(haystack + i));
 		i++;
@@ -54,8 +54,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 int	main(void)
 {
-	const char	haystack[] = "MZIRIBMZIRIBMZE123";
-	const char	needle[] = "MZIRIBMZE";
+	const char	haystack[] = "abcabcabcd";
+	const char	needle[] = "cd";
 	size_t	n = 9;
 
 	printf("func:%s\n", ft_strnstr(haystack, needle, n));

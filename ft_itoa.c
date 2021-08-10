@@ -31,9 +31,9 @@ char	*ft_itoa(int n)
 
 	mem = ft_mem(n);
 	is_negative = 0;
-	c = (char *)malloc(sizeof(c) * mem + 1);
+	c = (char *)malloc(sizeof(char) * mem + 1);
 	if (!c)
-		return (0);
+		return (c = 0);
 	if (n < 0)
 		is_negative = 1;
 	c[mem] = '\0';

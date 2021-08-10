@@ -50,7 +50,7 @@ char	**ft_split(char const *s, char c)
 
 	arr = (char **)malloc(sizeof(*arr) * ft_wrdnbr(s, c) + 1);
 	if (!arr)
-		return (0);
+		return (arr = 0);
 	i = 0;
 	while (*s)
 	{

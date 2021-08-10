@@ -7,6 +7,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	p = s;
+	if (c > 255)
+		c -= 256;
 	while (i < n)
 	{
 		if (*p == c)

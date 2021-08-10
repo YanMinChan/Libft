@@ -17,8 +17,10 @@ char	*ft_strrchr(const char *s, int c)
 	int	j;
 	int	cnt;
 
-	j = ft_charcnt(s, c);
 	cnt = 0;
+	if (c > 255)
+		c -= 256;
+	j = ft_charcnt(s, c);
 	while (*s)
 	{
 		if (*s == c)

@@ -43,14 +43,10 @@ static int	ft_wrdlen(char const *s, char c)
 	return (len);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_alloc_arr(char const *s, char c, char **arr)
 {
-	char	**arr;
-	int		i;
+	int	i;
 
-	arr = (char **)malloc(sizeof(*arr) * ft_wrdnbr(s, c) + 1);
-	if (!arr)
-		return (arr = 0);
 	i = 0;
 	while (*s)
 	{
@@ -58,8 +54,8 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s != c)
 		{
-			arr[i] = (char *)malloc(sizeof(arr) * (ft_wrdlen(s, c) + 1));
-			if (!arr[i] || ft_wrdlen(s, c) == 0)
+			arr[i] = (char *)malloc(sizeof(arr) * ft_wrdlen(s, c) + 1);
+			if (!arr[i] || !ft_wrdlen(s, c))
 				break ;
 			ft_strlcpy(arr[i], s, ft_wrdlen(s, c) + 1);
 			s += ft_wrdlen(s, c);
@@ -67,6 +63,19 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	arr[i] = 0;
+	return (arr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+
+	if (!s)
+		return (arr = 0);
+	arr = (char **)malloc(sizeof(*arr) * ft_wrdnbr(s, c) + 1);
+	if (!arr)
+		return (arr = 0);
+	ft_alloc_arr(s, c, arr);
 	return (arr);
 }
 

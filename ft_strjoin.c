@@ -5,6 +5,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		tlen;
 	char	*newstr;
 
+	if (!s1 || !s2)
+		return (newstr = 0);
 	tlen = (int)(ft_strlen(s1) + ft_strlen(s2));
 	newstr = (char *)malloc(sizeof(char) * (tlen + 1));
 	if (!newstr)

@@ -8,8 +8,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		return ;
 	while (*lst)
 	{
-		next = (*lst)->next;
 		ft_lstdelone(*lst, del);
+		next = (*lst)->next;
 		*lst = next;
 	}
 	*lst = 0;
